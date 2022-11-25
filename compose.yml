@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  node-svelte:
+    build: 
+      context: services/node-sveltekit
+    container_name: ${COMPOSE_PROJECT_NAME}-node
+    ports:
+      - "5173:5173"
+    tty: true
+    volumes:
+      - ./sveltekit:/sveltekit
+    working_dir: /sveltekit
